@@ -97,4 +97,10 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence {
         bpActual.setPoints(bpUpdate.getPoints());
     }
 
+    @Override
+    public Set<Blueprint> deleteBLueprint(String author, String bpname, Blueprint blueprint) throws BlueprintNotFoundException {
+        blueprints.remove(new Tuple<>(author,bpname),blueprint);
+        return getBlueprintsByAuthor(author);
+    }
+
 }

@@ -81,4 +81,13 @@ public class BlueprintsServices {
         Blueprint blueprint = getBlueprint(author,bpname);
         bpp.updateBluePrint(author,bpname,bp);
     }
+
+    public void deleteBlueprint(String author, String bpname)throws BlueprintNotFoundException{
+        Blueprint blueprint = getBlueprint(author,bpname);
+        if(blueprint == null){
+            throw new BlueprintNotFoundException("Blueprint doesn´t exist");
+        }else {
+            bpp.deleteBLueprint(author,bpname,blueprint);
+        }
+    }
 }

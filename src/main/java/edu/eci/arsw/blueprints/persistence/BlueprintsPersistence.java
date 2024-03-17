@@ -40,4 +40,6 @@ public interface BlueprintsPersistence {
     Map<Tuple<String,String>,Blueprint> getAllBlueprints() throws  BlueprintPersistenceException;
 
     void updateBluePrint(String author, String bpname, Blueprint bpUpdate) throws BlueprintNotFoundException;
+
+    Set<Blueprint> deleteBLueprint(String author,String bpname, Blueprint blueprint) throws BlueprintNotFoundException;
 }
